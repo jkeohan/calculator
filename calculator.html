@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css"  href="cal.css">
+		<script type="text/javascript" src = "d3.min.js"></script>
+		
+	</head>
+
+	<body>
+
+	<div class = "wrapper-top">
+		<div class = "input1" >
+			<input type="text" id="input1">
+		</div>
+		<div class = "input2"> 
+			<input type="text" id="input2">
+		</div>
+	</div><!--wrapper top -->
+	<div class = "wrapper-middle"> 
+	</div><!--wrapper-middle-->
+	<div class="wrapper-bottom">
+			<div class="result-text">Results</div>
+	<div class="results">
+		<input type"text" id="result"> 
+	</div>
+	</div><!--wrapper bottom -->
+	<script>
+
+		var svgViewPort = d3.select('.wrapper-middle').append('svg');
+		svgViewPort.attr('width', 140).attr('height',100);
+		var circle1 = svgViewPort.append('circle').attr("cx",15).attr("cy",15).attr("r",14);
+		var textplus = svgViewPort.append('text').text("+").attr("x",14).attr("y",20).attr("text-anchor","middle");
+		var circle2 = svgViewPort.append('circle').attr("cx",50).attr("cy",15).attr("r",14);
+		var textminus = svgViewPort.append('text').text("-").attr("x",49).attr("y",20).attr("text-anchor","middle");
+		var circle3 = svgViewPort.append('circle').attr("cx",85).attr("cy",15).attr("r",14);
+		var textmultiply = svgViewPort.append('text').text("X").attr("x",86).attr("y",20).attr("text-anchor","middle");
+		var circle4 = svgViewPort.append('circle').attr("cx",120).attr("cy",15).attr("r",14);
+		var textdivide = svgViewPort.append('text').text("/").attr("x",119).attr("y",20).attr("text-anchor","middle");
+
+
+		var input1 = document.querySelector("#input1");
+		//var input1Value = input1.value;
+		var input2 = document.querySelector("#input2");
+		var result = document.querySelector("#result");
+	
+		textplus.on("mousedown",add);
+		textminus.on("mousedown",minus);
+		textmultiply.on("mousedown",multiply);
+		textdivide.on("mousedown",divide);
+
+
+		function add(){
+		 var mouseCoordX = (d3.mouse(this)[0]);
+		 console.log(parseInt(input1.value) + parseInt(input2.value));
+		 var sum = parseInt(input1.value) + parseInt(input2.value);
+		 result.value=sum;
+		}
+
+		function minus(){
+		 var mouseCoordX = (d3.mouse(this)[0]);
+		 console.log(parseInt(input1.value) - parseInt(input2.value));
+		 var sum = parseInt(input1.value) - parseInt(input2.value);
+		 result.value=sum;
+		}
+
+		function multiply(){
+		 var mouseCoordX = (d3.mouse(this)[0]);
+		 console.log(parseInt(input1.value) * parseInt(input2.value));
+		 var sum = parseInt(input1.value) * parseInt(input2.value);
+		 result.value=sum;
+		}
+
+		function divide(){
+		 var mouseCoordX = (d3.mouse(this)[0]);
+		 console.log(parseInt(input1.value) / parseInt(input2.value));
+		 var sum = parseInt(input1.value) / parseInt(input2.value);
+		 result.value=sum;
+		}
+
+
+	</script>
+
+	</body>
+
+</html>
