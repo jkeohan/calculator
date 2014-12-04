@@ -4,7 +4,8 @@
 	<head>
 
 		<link rel="stylesheet" type="text/css"  href="cal.css">
-		<script type="text/javascript" src = "d3.min.js"></script>
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 		
 	</head>
 
@@ -45,7 +46,7 @@
 		var input2 = document.querySelector("#input2");
 		var result = document.querySelector("#result");
 	
-		textplus.on("mousedown",add);
+		textplus.on("click",add);
 		textminus.on("mousedown",minus);
 		textmultiply.on("mousedown",multiply);
 		textdivide.on("mousedown",divide);
